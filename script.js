@@ -1,2 +1,5 @@
 "use strict";
-alert('script1!');
+/*
+    комментарий
+*/
+alert('script1!'); // комментарий
