@@ -1,1 +1,2 @@
-alert('test1');
+"use strict";
+alert('script2!');
