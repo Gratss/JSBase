@@ -3,18 +3,15 @@ let a, b, c, d, result, str;
 
 //Glebchikkk
 
-alert(a);
-a = null;
-alert(a);
-a = true;
-alert(a);
-a = false;
-alert(a);
-c = 'before'
-d = 'dead'
-alert(c * d);
-a = 10;
-b = -10;
-c = 0;
-alert(a / c);
-alert(b / c)
+a = 'reju';
+console.log(a);
+b = 'za';
+c = 'hotdogi';
+d = 'zvoni';
+console.log(b, c, d);
+a = 123;
+b = '123';
+console.log(a, b);
+console.log(a);
+console.log(b);
+alert(reju);
