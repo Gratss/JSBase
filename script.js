@@ -1,12 +1,8 @@
 "use strict";
-let a, b, c, d; 
+let a, b, c, d, result; 
 
 
-a = 2 * 8 / 4;
-alert(a);
-// №2
-a = (2 * 8) / 4;
-alert(a);
-// №3
-a = 2 * (8 / 4);
-alert(a);
+a = 1.5;
+b = 0.75;
+result = a + b;
+alert(result);
