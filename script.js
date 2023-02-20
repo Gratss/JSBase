@@ -1,5 +1,5 @@
-let obj = {x: 1, y: 2, z: 3};
-obj['x'] = 1;
-obj['y'] = 4;
-obj['z'] = 9;
+let obj = {};
+obj['a'] = 1;
+obj['b'] = 2;
+obj['c'] = 3;
 console.log(obj);
