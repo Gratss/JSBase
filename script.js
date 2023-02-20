@@ -1,4 +1,2 @@
-let FIO = {name: 'Gleb', 
-surname: 'Selivanov', 
-patronymic: 'Sergeevich'};
-console.log(FIO);
+let date = {year: 2023, month: 02, day: 14};
+console.log(date.year,date.month,date.day);
