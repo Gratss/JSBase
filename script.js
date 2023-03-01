@@ -1,3 +1,3 @@
 let obj = {x: 1, y: 2, z: 3};
-console.log('x' in obj); 
-console.log('w' in obj)
+delete obj.x;
+console.log('x' in obj);
