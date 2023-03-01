@@ -1,6 +1,8 @@
 console.log( typeof {x: 1, y: 2, z: 3} ); 
-console.log( typeof {} );
-let obj = {x: 1, y: 2, z: 3};
-console.log( typeof obj );
-let obj1 = {x: 1, y: 2, z: 3};
-console.log( typeof obj1['x'] );
+console.log( typeof [1, 2, 3] );
+let arr = [1, 2, 3];
+console.log( typeof arr );
+let arr1 = [1, 2, 3];
+console.log( typeof arr[0] );
+let arr2 = ['1', '2', '3'];
+console.log( typeof arr[0] );
