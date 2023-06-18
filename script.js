@@ -1,13 +1,17 @@
 window.onload = function() {
-    const myDiv = document.getElementById('myDiv');
-const myParagraph = document.getElementById('myParagraph');
-
-for (let i = 0; i < 5; i++) {
-  const input = document.createElement('input');
-  input.addEventListener('blur', function() {
-    myParagraph.textContent += this.value + ' ';
-  });
-  myDiv.appendChild(input);
-}
-
-}
+    let elems = document.querySelectorAll('li');
+    
+    for (let elem of elems) {
+        elem.addEventListener('click', function() {
+            elem.remove();
+        });
+    }
+    // 2
+    document.getElementById('button').addEventListener('click', function() {
+      var parent = document.getElementById('parent');
+      var lastChild = parent.lastElementChild;
+      if (lastChild) {
+        parent.removeChild(lastChild);
+      }
+    });
+    }
