@@ -1,13 +1,22 @@
-window.onload = function() {
-    ;(function(selector1, selector2, selector3, selector4) {
-      let input1 = document.querySelector(selector1);
-      let input2 = document.querySelector(selector2);
-      let input3 = document.querySelector(selector3);
-      let button = document.querySelector(selector4);
-      
-      button.addEventListener('click', function() {
-        let sum = Number(input1.value) + Number(input2.value) + Number(input3.value);
-        console.log(sum);
-      });
-    })('#input1', '#input2', '#input3', '#button');
-    }
+;(function() {
+	let str1 = 'переменная модуля';
+	let str2 = 'переменная модуля';
+	let str3 = 'переменная модуля';
+	
+	function func1() {
+		alert('функция модуля');
+	}
+	function func2() {
+		alert('функция модуля');
+	}
+	function func3() {
+		alert('функция модуля');
+	}
+
+	window.str1 = str1;
+	window.func2 = func2;
+	window.func3 = func3;
+})();
+console.log(str1); // выведет "переменная модуля"
+func2(); // вызовет функцию func2 внутри модуля
+func3(); // вызовет функцию func3 внутри модуля
