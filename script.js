@@ -1,10 +1,14 @@
 window.onload = function() {
-    function appendText(selector, text) {
-        let elems = document.querySelectorAll(selector);
-        
-        for (let elem of elems) {
-            elem.textContent += text;
-        }
+    function forEach(collection, callback) {
+      for (let i = 0; i < collection.length; i++) {
+        callback(collection[i]);
+      }
     }
-    appendText('.elem', 'text');
+    
+    let paragraphs = document.querySelectorAll('p');
+    
+    forEach(paragraphs, function(paragraph) {
+      paragraph.textContent += '!';
+    });
+    
     }
