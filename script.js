@@ -1,15 +1,14 @@
 window.onload = function() {
-    // "use strict";
-    
-    let elem = document.querySelector('#elem');
-    elem.addEventListener('blur', parent);
-    
-    function parent() {
-        console.log(this.value); // text
-        
-        function child() {
-            console.log(this.value); // undefined
-        }
-        child();
-    }
-    }
+    "use strict";
+
+let elem = document.querySelector('#elem');
+elem.addEventListener('blur', func);
+
+function func() {
+	alert( square.call(this) );
+	
+	function square() {
+		return this.value * this.value;
+	}
+}
+}
