@@ -1,34 +1,23 @@
 window.onload = function() {
-    let paragraphs = document.querySelectorAll('#parent p');
-    
-    for (let i = 0; i < paragraphs.length; i++) {
-      let deleteLink = document.createElement('a');
-      deleteLink.href = '#';
-      deleteLink.textContent = 'delete';
-    
-      deleteLink.addEventListener('click', function(e) {
-        e.preventDefault();
-        this.parentNode.parentNode.removeChild(this.parentNode);
+    let pTags = document.getElementsByTagName('p');
+    for (let i = 0; i < pTags.length; i++) {
+      let link = document.createElement('a');
+      link.href = '#';
+      link.innerHTML = 'Перечеркнуть';
+      link.addEventListener('click', function() {
+        pTags[i].style.textDecoration = 'line-through';
+        this.style.textDecoration = 'none';
       });
-    
-      paragraphs[i].appendChild(deleteLink);
-    }let spans = document.querySelectorAll('#parent span');
-    
-    for (let i = 0; i < spans.length; i++) {
-      spans[i].addEventListener('click', function() {
-        let input = document.createElement('input');
-        input.type = 'text';
-        input.value = this.textContent;
-    
-        input.addEventListener('blur', function() {
-          this.parentNode.removeChild(this);
-          let span = document.createElement('span');
-          span.textContent = this.value;
-          this.parentNode.insertBefore(span, this);
-        });
-    
-        this.parentNode.insertBefore(input, this);
-      });
+      pTags[i].appendChild(link);
     }
+    // 2
+    const table = document.getElementById('myTable');
     
+    table.addEventListener('click', function(event) {
+      const target = event.target;
+      if (target.tagName === 'A') {
+        const row = target.parentNode.parentNode;
+        row.classList.add('green-bg');
+      }
+    });
     }
