@@ -1,23 +1,26 @@
 window.onload = function() {
-    const container = document.querySelector('#container');
-const first = document.querySelector('#first');
-const second = document.querySelector('#second');
-const button = document.querySelector('#button');
+    let div = document.querySelector('div');
 
-container.addEventListener('click', (event) => {
-  console.log(`Click on ${event.target.tagName} in container`);
+div.addEventListener('click', function(event) {
+  if (event.target.tagName === 'DIV') {
+    console.log('Клик произошел на div');
+  } else if (event.target.tagName === 'UL') {
+    console.log('Клик произошел на ul');
+  } else if (event.target.tagName === 'LI') {
+    console.log('Клик произошел на li');
+  }
+});
+// 2
+let container = document.querySelector('#container');
+
+container.addEventListener('click', function(event) {
+	if (event.target.tagName === 'LI') {
+		event.target.innerHTML += '!';
+	} else if (event.target.tagName === 'UL') {
+		let newLi = document.createElement('li');
+		newLi.innerHTML = 'New item';
+		event.target.appendChild(newLi);
+	}
 });
 
-first.addEventListener('click', (event) => {
-  console.log(`Click on ${event.target.tagName} in first`);
-});
-
-second.addEventListener('click', (event) => {
-  console.log(`Click on ${event.target.tagName} in second`);
-});
-
-button.addEventListener('click', (event) => {
-  console.log(`Click on ${event.target.tagName} in button`);
-});
-// focus
 }
