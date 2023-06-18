@@ -1,14 +1,16 @@
 window.onload = function() {
-    let ul = document.querySelector('#elem');
-    
-    ul.addEventListener('click', function(event) {
-      let target = event.target;
-      if (target.tagName === 'LI') {
-        target.textContent += '!';
-      } else if (target.tagName === 'UL') {
-        let li = document.createElement('li');
-        li.textContent = 'new item';
-        ul.appendChild(li);
-      }
-    });
-    }
+    let elem = document.querySelector('input');
+    elem.addEventListener('keypress', function(event) {
+	console.log(event.code);
+});
+// 2
+let input = document.querySelector('#myInput');
+let paragraph = document.querySelector('#myParagraph');
+
+input.addEventListener('keyup', function(event) {
+  if (event.keyCode === 13) { 
+    paragraph.textContent = input.value;
+    input.value = '';
+  }
+});
+}
