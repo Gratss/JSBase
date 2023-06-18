@@ -1,8 +1,12 @@
+let elem = document.getElementById('elem');
 
-let elem = document.querySelector('#elem');
-
-function func(surname, name) {
-	console.log(this.value + ', ' + surname + ' ' + name); 
+function func(name, surname) {
+    console.log(this.value + ', ' + name 
+        + ' ' + surname); 
 }
 
-func.apply(elem, ['Smit', 'John']); 
+// привязываем контекст выполнения функции func к элементу elem
+let funcBound = func.bind(elem);
+
+funcBound('John', 'Smit'); // выводит 'привет, John Smit'
+funcBound('Eric', 'Luis');
