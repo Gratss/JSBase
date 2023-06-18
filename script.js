@@ -1,22 +1,21 @@
-;(function() {
-	let str1 = 'переменная модуля';
-	let str2 = 'переменная модуля';
-	let str3 = 'переменная модуля';
-	
-	function func1() {
-		alert('функция модуля');
-	}
-	function func2() {
-		alert('функция модуля');
-	}
-	function func3() {
-		alert('функция модуля');
-	}
-
-	window.str1 = str1;
-	window.func2 = func2;
-	window.func3 = func3;
-})();
-console.log(str1); // выведет "переменная модуля"
-func2(); // вызовет функцию func2 внутри модуля
-func3(); // вызовет функцию func3 внутри модуля
+let sum = (arr, pow) => {
+    let res = 0;
+    for (let elem of arr) {
+      res += elem ** pow;
+    }
+    return res;
+  };
+  
+  let avg1 = (arr) => {
+    return sum(arr, 1) / arr.length;
+  };
+  
+  let avg2 = (arr) => {
+    return sum(arr, 2) / arr.length;
+  };
+  
+  let avg3 = (arr) => {
+    return sum(arr, 3) / arr.length;
+  };
+  
+  export { avg1, avg2, avg3 };
