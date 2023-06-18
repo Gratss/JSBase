@@ -1,10 +1,29 @@
 window.onload = function() {
-    let arr = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12]];
-      for (let i = 0; i < arr.length; i++) {
-        document.write('<tr>');
-        for (let j = 0; j < arr[i].length; j++) {
-          document.write('<td>' + arr[i][j] + '</td>');
+    let employees = [
+            {name: 'employee1', age: 30, salary: 400}, 
+            {name: 'employee2', age: 31, salary: 500}, 
+            {name: 'employee3', age: 32, salary: 600}, 
+          ];
+          for (let i = 0; i < employees.length; i++) {
+            let tr = document.createElement('tr');
+            let nameTd = document.createElement('td');
+            nameTd.innerText = employees[i].name;
+            let ageTd = document.createElement('td');
+            ageTd.innerText = employees[i].age;
+            ageTd.classList.add('age'); 
+            let salaryTd = document.createElement('td');
+            salaryTd.innerText = employees[i].salary;
+            tr.appendChild(nameTd);
+            tr.appendChild(ageTd);
+            tr.appendChild(salaryTd);
+            document.querySelector('tbody').appendChild(tr);
+          }
+          
+          let ageTds = document.querySelectorAll('.age');
+          ageTds.forEach(td => {
+            td.addEventListener('click', () => {
+              let age = parseInt(td.innerText);
+              td.innerText = age + 1;
+            });
+          });
         }
-        document.write('</tr>');
-      }
-}
