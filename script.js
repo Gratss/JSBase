@@ -1,8 +1,13 @@
 window.onload = function() {
-    const ul = document.getElementById('list');
-    for (let i = 1; i <= 10; i++) {
-      const li = document.createElement('li');
-      li.textContent = i;
-      ul.appendChild(li);
-    }
-    }
+    const myDiv = document.getElementById('myDiv');
+const myParagraph = document.getElementById('myParagraph');
+
+for (let i = 0; i < 5; i++) {
+  const input = document.createElement('input');
+  input.addEventListener('blur', function() {
+    myParagraph.textContent += this.value + ' ';
+  });
+  myDiv.appendChild(input);
+}
+
+}
