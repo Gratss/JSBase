@@ -1,24 +1,18 @@
 window.onload = function() {
     let elem = document.querySelector('#elem');
-    let input = document.querySelector('#input');
-    
-    input.value = elem.textContent; 
-    
-    input.addEventListener('input', function() {
-        elem.textContent = this.value;
-    });
-    // 2
-    let elem2 = document.querySelector('#elem1');
-    
-    elem2.addEventListener('click', function() {
+    elem.addEventListener('click', function func()
+         { 
         let input = document.createElement('input');
-        input.value = elem2.textContent;
+        input.value = elem.textContent;
+        
+        elem.textContent = '';
+        elem.appendChild(input);
         
         input.addEventListener('blur', function() {
-            elem2.textContent = this.value;
-            this.remove(); // удалим инпут
+            elem.textContent = this.value;
+            elem.addEventListener('click', func); 
         });
         
-        elem2.parentElement.appendChild(input);
+        elem.removeEventListener('click', func);
     });
     }
