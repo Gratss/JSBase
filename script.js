@@ -1,29 +1,39 @@
 window.onload = function() {
-    let employees = [
-            {name: 'employee1', age: 30, salary: 400}, 
-            {name: 'employee2', age: 31, salary: 500}, 
-            {name: 'employee3', age: 32, salary: 600}, 
-          ];
-          for (let i = 0; i < employees.length; i++) {
-            let tr = document.createElement('tr');
-            let nameTd = document.createElement('td');
-            nameTd.innerText = employees[i].name;
-            let ageTd = document.createElement('td');
-            ageTd.innerText = employees[i].age;
-            ageTd.classList.add('age'); 
-            let salaryTd = document.createElement('td');
-            salaryTd.innerText = employees[i].salary;
-            tr.appendChild(nameTd);
-            tr.appendChild(ageTd);
-            tr.appendChild(salaryTd);
-            document.querySelector('tbody').appendChild(tr);
-          }
-          
-          let ageTds = document.querySelectorAll('.age');
-          ageTds.forEach(td => {
-            td.addEventListener('click', () => {
-              let age = parseInt(td.innerText);
-              td.innerText = age + 1;
-            });
-          });
-        }
+    let addRowBtn = document.getElementById('addRowBtn');
+    let table = document.getElementById('myTable');
+    
+    addRowBtn.addEventListener('click', function() {
+      let newRow = table.insertRow();
+      for (let i = 0; i < 5; i++) {
+        let cell = newRow.insertCell();
+        cell.innerHTML = '';
+      }
+    });
+    // 2
+    let addBtn = document.getElementById('addBtn');
+    let table1 = document.getElementById('table');
+    
+    addBtn.addEventListener('click', function() {
+      // находим количество строк и колонок в таблице
+      let rowCount = table1.rows.length;
+      let colCount = table1.rows[0].cells.length;
+      
+      // добавляем новую ячейку в каждую строку
+      for (let i = 0; i < rowCount; i++) {
+        let cell = table1.rows[i].insertCell(colCount);
+        cell.style.width = '50px';
+        cell.style.height = '50px';
+        cell.style.border = '1px solid black';
+      }
+      
+      // добавляем новую строку
+      let newRow = table1.insertRow(rowCount);
+      for (let i = 0; i < colCount + 1; i++) {
+        let cell = newRow.insertCell();
+        cell.style.width = '50px';
+        cell.style.height = '50px';
+        cell.style.border = '1px solid black';
+      }
+    });
+    
+    }
