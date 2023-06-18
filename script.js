@@ -1,13 +1,16 @@
 window.onload = function() {
-    let list = document.querySelector('#list');
-    let items = list.getElementsByTagName('li');
+    let tds = document.querySelectorAll('#table td');
     
-    for (let i = 0; i < items.length; i++) {
-      items[i].addEventListener('click', function() {
-        for (let j = 0; j < items.length; j++) {
-          items[j].classList.remove('active');
-        }
-        this.classList.add('active');
-      });
+    let color = 'color1';
+    for (let td of tds) {
+        td.addEventListener('click', function() {
+            if (color == 'color1') {
+                color = 'color2'
+            } else {
+                color = 'color1'
+            }
+            
+            this.classList.add(color);
+        });
     }
     }
