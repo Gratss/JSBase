@@ -1,30 +1,24 @@
 window.onload = function() {
-    const list = document.getElementById('myList');
-    const items = list.getElementsByTagName('li');
+    let elem = document.querySelector('#elem');
+    let input = document.querySelector('#input');
     
-    for (let i = 0; i < items.length; i++) {
-      const deleteLink = document.createElement('a');
-      deleteLink.href = '#';
-      deleteLink.innerHTML = 'Удалить';
-      
-      deleteLink.onclick = function() {
-        list.removeChild(items[i]);
-        return false;
-      }
-      
-      items[i].appendChild(deleteLink);
-    }
+    input.value = elem.textContent; 
+    
+    input.addEventListener('input', function() {
+        elem.textContent = this.value;
+    });
     // 2
-    let table = document.getElementById('myTable');
-      for (let i = 0; i < table.rows.length; i++) {
-        let deleteCell = table.rows[i].insertCell(-1);
-        deleteCell.innerHTML = '<button class="delete-btn">Delete</button>';
-      }
+    let elem2 = document.querySelector('#elem1');
     
-      table.addEventListener('click', function(e) {
-        if (e.target.classList.contains('delete-btn')) {
-          let row = e.target.closest('tr');
-          row.parentNode.removeChild(row);
-        }
-      });
+    elem2.addEventListener('click', function() {
+        let input = document.createElement('input');
+        input.value = elem2.textContent;
+        
+        input.addEventListener('blur', function() {
+            elem2.textContent = this.value;
+            this.remove(); // удалим инпут
+        });
+        
+        elem2.parentElement.appendChild(input);
+    });
     }
