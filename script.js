@@ -1,7 +1,10 @@
 window.onload = function() {
-    function setAttr(selector, attrName, attrValue) {
-      const elem = document.querySelector(selector);
-      elem.setAttribute(attrName, attrValue);
+    function appendText(selector, text) {
+        let elems = document.querySelectorAll(selector);
+        
+        for (let elem of elems) {
+            elem.textContent += text;
+        }
     }
-    setAttr('#myButton', 'disabled', true);
+    appendText('.elem', 'text');
     }
