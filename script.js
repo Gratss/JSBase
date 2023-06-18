@@ -1,20 +1,25 @@
 window.onload = function() {
-    let elem = document.getElementById('elem');
+    const links = document.querySelectorAll('a');
 
-elem.addEventListener('click', function(event) {
-  if (event.altKey) {
-    elem.style.backgroundColor = 'red';
-  }
-});
-// 2
-let elem1 = document.querySelector('#elem');
-elem1.addEventListener('click', function(event1) {
-  if (event1.target.tagName === 'LI') {
-    if (event1.ctrlKey) {
-      event1.target.textContent += '1';
-    } else if (event1.shiftKey) {
-      event1.target.textContent += '2';
-    }
-  }
-});
+  links.forEach(link => {
+    link.addEventListener('click', (event) => {
+      event.preventDefault();
+      link.textContent += link.href;
+    });
+  });
+//   2
+let input1 = document.getElementById('input1');
+  let input2 = document.getElementById('input2');
+  let result = document.getElementById('result');
+  let calculateBtn = document.getElementById('calculate');
+
+  calculateBtn.addEventListener('click', function(event) {
+    event.preventDefault();
+
+    let num1 = +input1.value;
+    let num2 = +input2.value;
+    let sum = num1 + num2;
+
+    result.textContent = sum;
+  });
 }
