@@ -1,11 +1,15 @@
-let arr = {a: 1, b: {c: 2, d: 3, e: 4}, f: {g: 5, j: 6, k: {l: 7, m: {n: 8, o: 9}}}}
-function func(arr) {
-	for (let elem of arr) {
-		if (typeof elem == 'object') {
-			func(elem);
-		} else {
-			console.log(elem);
-		}
-	}
-}
-func(); 
+let p1 = document.querySelector("#elem1");
+let p2 = document.querySelector("#elem2");
+let p3 = document.querySelector("#elem3");
+console.log(p1);
+console.log(p2);
+console.log(p3);
+// 2
+let pOne = document.querySelector("#block p");
+console.log(pOne);
+// 3
+let p1One = document.querySelector(".block p");
+console.log(p1One);
+// 4
+let www = document.querySelector(".www");
+console.log(www);
