@@ -1,18 +1,21 @@
 window.onload = function() {
-    let elem = document.querySelector('#elem');
-    elem.addEventListener('click', function func()
-         { 
-        let input = document.createElement('input');
-        input.value = elem.textContent;
-        
-        elem.textContent = '';
-        elem.appendChild(input);
-        
-        input.addEventListener('blur', function() {
-            elem.textContent = this.value;
-            elem.addEventListener('click', func); 
-        });
-        
-        elem.removeEventListener('click', func);
-    });
+    let list = document.querySelector('#list');
+    
+      list.addEventListener('click', function(event) {
+        let target = event.target;
+    
+        if (target.tagName === 'LI') {
+          let input = document.createElement('input');
+          input.value = target.textContent;
+    
+          input.addEventListener('blur', function() {
+            target.textContent = this.value;
+            this.parentNode.removeChild(this);
+          });
+    
+          target.textContent = '';
+          target.appendChild(input);
+          input.focus();
+        }
+      });
     }
