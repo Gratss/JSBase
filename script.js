@@ -1,16 +1,9 @@
 window.onload = function() {
-    function appendText(elem, text) {
-      elem.textContent += text;
+    function appendText(elems, text) {
+        for (let elem of elems) {
+            elem.textContent = text;
+        }
     }
-    
-    let paragraphs = document.querySelectorAll('p');
-    
-    paragraphs.forEach(function(paragraph) {
-      appendText(paragraph, '!');
-    });
-    // 2
-    function setValue(input, text) {
-      input.value = text;
-    }
-    
+    let elems = document.querySelectorAll('.elem');
+    appendText(elems, 'text');
     }
