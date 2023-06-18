@@ -1,16 +1,20 @@
 window.onload = function() {
-    const button = document.getElementById('my-button');
-    const table = document.getElementById('my-table');
+    let parent = document.getElementById('parent');
+    let button = document.getElementById('button');
     
     button.addEventListener('click', function() {
-      const cells = table.getElementsByTagName('td');
-      
-      for (let i = 0; i < cells.length; i++) {
-        const cell = cells[i];
-        const number = parseInt(cell.innerHTML);
-        if (!isNaN(number)) {
-          cell.innerHTML = number * 2;
-        }
-      }
+      let li = document.createElement('li');
+      li.innerHTML = parent.children.length + 1;
+      parent.appendChild(li);
+    
+      li.addEventListener('click', function() {
+        parent.removeChild(this);
+      });
     });
+    
+    for (let i = 0; i < parent.children.length; i++) {
+      parent.children[i].addEventListener('click', function() {
+        parent.removeChild(this);
+      });
+    }
     }
