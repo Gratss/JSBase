@@ -1,23 +1,13 @@
 window.onload = function() {
-    function createTableByArr(arr) {
-      let table = document.createElement('table');
-    
-      for (let i = 0; i < arr.length; i++) {
-        let row = table.insertRow();
-        for (let j = 0; j < arr[i].length; j++) {
-          let cell = row.insertCell();
-          cell.textContent = arr[i][j];
-        }
-      }
-    
-      return table;
-    }
-    
-    let div = document.querySelector('#elem');
-    
-    let arr = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
-    let table = createTableByArr(arr);
-    
-    div.appendChild(table);
-    
+    ;(function(selector1, selector2, selector3, selector4) {
+      let input1 = document.querySelector(selector1);
+      let input2 = document.querySelector(selector2);
+      let input3 = document.querySelector(selector3);
+      let button = document.querySelector(selector4);
+      
+      button.addEventListener('click', function() {
+        let sum = Number(input1.value) + Number(input2.value) + Number(input3.value);
+        console.log(sum);
+      });
+    })('#input1', '#input2', '#input3', '#button');
     }
